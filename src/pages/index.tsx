@@ -1,0 +1,10 @@
+export { default as AboutPage } from "./AboutPage";
+export { default as BlogPage } from "./BlogPage";
+export { default as ContactPage } from "./ContactPage";
+export { default as GalleryDesignUxUiPage } from "./GalleryDesignUxUiPage";
+export { default as GalleryDevelopmentPage } from "./GalleryDevelopmentPage";
+export { default as GalleryGraphicDesignPage } from "./GalleryGraphicDesignPage";
+export { default as GalleryIllustrationPage } from "./GalleryIllustrationPage";
+export { default as GalleryOthersPage } from "./GalleryOthersPage";
+export { default as GalleryPage } from "./GalleryPage";
+export { default as HomePage } from "./HomePage";

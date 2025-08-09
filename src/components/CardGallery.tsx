@@ -1,4 +1,4 @@
-import { galleries } from "./data/galleries";
+import { galleries } from "../data/galleries";
 import "./CardGallery.css";
 
 const CardGallery = () => {
