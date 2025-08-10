@@ -1,14 +1,12 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HomePage, AboutPage, BlogPage, ContactPage, GalleryDesignUxUiPage, GalleryDevelopmentPage, GalleryGraphicDesignPage, GalleryIllustrationPage, GalleryOthersPage, GalleryPage } from './pages';
 import Header from './components/Header'
 import CardGallery from './components/CardGallery'
 import './App.css'
+import GalleryItemPage from './pages/GalleryItemPage';
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
@@ -25,6 +23,7 @@ function App() {
           <Route path="/others" element={<GalleryOthersPage />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
           <Route path="/blog" element={<BlogPage />}></Route>
+          <Route path='/portfolio/:name' element={<GalleryItemPage />}></Route>
         </Routes>
       </Router>
     </>
