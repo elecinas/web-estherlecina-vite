@@ -5,11 +5,8 @@ const GalleryItemPage = () => {
     const { name } = useParams<{ name: string }>();
     const page = galleries.find((e) => e.id === name);
 
-    if (!page) {
-        return <div>Este trabajo no existe</div>;
-    }
-
     return (
+        page &&
         <div>
             <h1>{page.title}</h1>
             <p>{page.description}</p>
@@ -34,4 +31,3 @@ const GalleryItemPage = () => {
 };
 
 export default GalleryItemPage;
-// <p key={pageBlock.id}></p>
