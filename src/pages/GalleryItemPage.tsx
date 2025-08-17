@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { galleries } from "../data/galleries";
+import './GalleryItemPage.css';
 
 const GalleryItemPage = () => {
     const { name } = useParams<{ name: string }>();
@@ -26,6 +27,13 @@ const GalleryItemPage = () => {
                         </>)
                 })
             }
+            {page.links && page.links.map((link, indexLink) => {
+                return (link.linkDirection !== "internal" ?
+                    <a className={link.linkDirection} href={link.href} title={link.title} key={indexLink} target={link.target ?? "_self"}>{link.label}</a>
+                    :
+                    <Link to={`/portfolio/${link.href}`} className={link.linkDirection}>{link.label}</Link>
+                )
+            })}
         </div>
     );
 };

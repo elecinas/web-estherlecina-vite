@@ -1,0 +1,11 @@
+.external {
+    border: 1px solid slategrey;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.internal {
+    border: 1px solid orange;
+    display: inline-block;
+    padding: 1rem;
+}
