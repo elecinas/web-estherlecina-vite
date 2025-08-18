@@ -37,13 +37,7 @@ export type image = {
   height?: number;
 };
 
-export type linkDirection =
-  | "figma"
-  | "github"
-  | "youtube"
-  | "vimeo"
-  | "internal"
-  | "external";
+export type linkDirection = "internal" | "external";
 
 export type workLink = {
   href: string;
@@ -53,9 +47,18 @@ export type workLink = {
   target?: "_blank";
 };
 
+export type EmbedType = "youtube" | "vimeo" | "figma" | "url";
+
+export interface EmbedProps {
+  type: EmbedType;
+  src: string;
+  title?: string;
+}
+
 export type pageModule = {
   text?: string;
   images?: image[];
+  embeds?: EmbedProps[];
 };
 
 export type Gallery = {
@@ -171,7 +174,8 @@ export const galleries: Gallery[] = [
     id: "disseny-ideas-de-raquel",
     portfolioLabel: "GraphicDesign",
     title: "Diseño editorial para los libros Las ideas de Raquel",
-    description: "Diseño de cubiertas e interiores para los dos libros de la youtuber Raquel",
+    description:
+      "Diseño de cubiertas e interiores para los dos libros de la youtuber Raquel",
     cardImage: {
       src: "/images/react.svg",
       alt: "alt de la imagen",
@@ -193,6 +197,24 @@ export const galleries: Gallery[] = [
             legend: "Leyenda",
             alt: "Descripción",
           },
+        ],
+      },
+      {
+        embeds: [
+          {
+            type: "youtube",
+            src: "https://www.youtube.com/embed/FjXtccVky6M?si=Ei1xam2a1kmrVjXF",
+            title: "Raquel firma los libros en Barcelona",
+          },
+          {
+            type: "vimeo",
+            src: "https://player.vimeo.com/video/1075753539?h=d3f9ad940d",
+            title: "Proyecto Arduino 1: Riego automático",
+          },
+          {
+            type: "figma",
+            src: "https://embed.figma.com/design/ZQlMkpqRKZiYJnJYKQlgij/Ca-La-Mariona?node-id=11-70&embed-host=share",
+          }
         ],
       },
       {
