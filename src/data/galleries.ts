@@ -21,7 +21,7 @@
 //   // IDs de todos los pageContent
 //   | G[number]["pageContent"][number]["id"];
 
-export type portfolioLabel =
+export type PortfolioLabel =
   | "Illustration"
   | "Comic"
   | "UxUiDesign"
@@ -29,7 +29,7 @@ export type portfolioLabel =
   | "WebDevelopment"
   | "Others";
 
-export type image = {
+export type Image = {
   src: string;
   alt: string;
   legend?: string;
@@ -37,13 +37,13 @@ export type image = {
   height?: number;
 };
 
-export type linkDirection = "internal" | "external";
+export type LinkDirection = "internal" | "external";
 
-export type workLink = {
+export type WorkLink = {
   href: string;
   title: string;
   label: string;
-  linkDirection: linkDirection;
+  linkDirection: LinkDirection;
   target?: "_blank";
 };
 
@@ -55,20 +55,20 @@ export interface EmbedProps {
   title?: string;
 }
 
-export type pageModule = {
+export type PageModule = {
   text?: string;
-  images?: image[];
+  images?: Image[];
   embeds?: EmbedProps[];
 };
 
 export type Gallery = {
   id: string;
-  portfolioLabel: portfolioLabel;
+  portfolioLabel: PortfolioLabel;
   title: string;
   description: string;
-  cardImage: image;
-  links?: workLink[];
-  pageContent: pageModule[];
+  cardImage: Image;
+  links?: WorkLink[];
+  pageContent: PageModule[];
 };
 
 export const galleries: Gallery[] = [
