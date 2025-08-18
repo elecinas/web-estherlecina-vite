@@ -1,8 +1,7 @@
 import reactLogo from './assets/react.svg'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HomePage, AboutPage, BlogPage, ContactPage, GalleryDesignUxUiPage, GalleryDevelopmentPage, GalleryGraphicDesignPage, GalleryIllustrationPage, GalleryOthersPage, GalleryPage } from './pages';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HomePage, AboutPage, BlogPage, ContactPage, GalleryDesignUxUiPage, GalleryDevelopmentPage, GalleryGraphicDesignPage, GalleryIllustrationPage, GalleryOthersPage, GalleryPage, NotFoundPage404 } from './pages';
 import Header from './components/Header'
-import CardGallery from './components/CardGallery'
 import './App.css'
 import GalleryItemPage from './pages/GalleryItemPage';
 
@@ -24,6 +23,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />}></Route>
           <Route path="/blog" element={<BlogPage />}></Route>
           <Route path='/portfolio/:name' element={<GalleryItemPage />}></Route>
+          <Route path="/404" element={<NotFoundPage404 />}></Route>
+          <Route path="*" element={<Navigate to="/404" />}></Route>
         </Routes>
       </Router>
     </>

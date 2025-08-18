@@ -8,3 +8,4 @@ export { default as GalleryIllustrationPage } from "./GalleryIllustrationPage";
 export { default as GalleryOthersPage } from "./GalleryOthersPage";
 export { default as GalleryPage } from "./GalleryPage";
 export { default as HomePage } from "./HomePage";
+export { default as NotFoundPage404 } from "./NotFoundPage404";
