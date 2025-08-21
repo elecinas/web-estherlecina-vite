@@ -5,13 +5,15 @@ import Header from './components/Header'
 import './App.css'
 import GalleryItemPage from './pages/GalleryItemPage';
 import ScrollToTop from './components/ScrollToTop';
+import { LanguageProvider } from './context/languageContext';
 
 function App() {
 
   return (
     <>
+    <LanguageProvider>
       <Router>
-        <Header />
+        <Header  />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
@@ -29,6 +31,7 @@ function App() {
           <Route path="*" element={<Navigate to="/404" />}></Route>
         </Routes>
       </Router>
+    </LanguageProvider>
     </>
   )
 }

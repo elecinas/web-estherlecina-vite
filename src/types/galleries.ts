@@ -61,12 +61,18 @@ export type PageModule = {
   embeds?: EmbedProps[];
 };
 
-export type Gallery = {
-  id: string;
+export type SupportedLanguages = "es" | "en"; 
+
+export type ProjectContent = {
   portfolioLabel: PortfolioLabel;
   title: string;
   description: string;
   cardImage: Image;
   links?: WorkLink[];
   pageContent: PageModule[];
+};
+
+export type Project = {
+  id: string;
+  translations: Record<SupportedLanguages, ProjectContent>;
 };
