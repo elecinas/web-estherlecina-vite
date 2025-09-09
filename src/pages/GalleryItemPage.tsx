@@ -11,7 +11,7 @@ const GalleryItemPage = () => {
 
     return (
         page &&
-        <div>
+        <main className="content-wrapper">
             <h1>{page.translations[language].title}</h1>
             <p>{page.translations[language].description}</p>
             {
@@ -48,7 +48,7 @@ const GalleryItemPage = () => {
                     <Link to={`/portfolio/${link.href}`} className={link.linkDirection}>{link.label}</Link>
                 )
             })}
-        </div>
+        </main>
     );
 };
 

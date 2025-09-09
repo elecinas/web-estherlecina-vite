@@ -1,6 +1,6 @@
 const BlogPage = () => {
     return(
-        <div>Página del Blog</div>
+        <main className="content-wrapper">Página del Blog</main>
     )
 }
 

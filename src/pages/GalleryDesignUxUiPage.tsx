@@ -7,7 +7,7 @@ const GalleryDesignUxUiPage = () => {
   const {language} = useLanguage();
 
   return (
-    <div>
+    <main className="content-wrapper">
       <p>Página Portfolio Diseño UX/UI</p>
       {galleries.map((itemGallery) => {
         return(
@@ -20,7 +20,7 @@ const GalleryDesignUxUiPage = () => {
             
         )
       })}
-    </div>
+    </main>
   );
 };
 

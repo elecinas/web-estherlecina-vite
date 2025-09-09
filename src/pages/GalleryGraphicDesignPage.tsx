@@ -1,6 +1,6 @@
 const GalleryGraphicDesignPage = () => {
     return(
-        <div>Página Galería de Diseño Gráfico</div>
+        <main className="content-wrapper">Página Galería de Diseño Gráfico</main>
     )
 }
 

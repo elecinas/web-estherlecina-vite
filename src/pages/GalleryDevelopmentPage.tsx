@@ -1,6 +1,6 @@
 const GalleryDevelopmentPage = () => {
     return(
-        <div>Página Galería de Desarrollo Web</div>
+        <main className="content-wrapper">Página Galería de Desarrollo Web</main>
     )
 }
 

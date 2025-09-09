@@ -10,7 +10,7 @@ const ContactPage = () => {
     const [message, setMessage] = useState("");
 
     return (
-        <div>
+        <main className="content-wrapper">
             <h1>{contactContent.translations[language].title}</h1>
             <p>{contactContent.translations[language].text}</p>
             <figure>
@@ -86,7 +86,7 @@ const ContactPage = () => {
                     </button>
                 </fieldset>
             </form>
-        </div>
+        </main>
     )
 }
 

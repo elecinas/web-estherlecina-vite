@@ -1,6 +1,6 @@
 const GalleryIllustrationPage = () => {
     return(
-        <div>Página Galería de ilustración</div>
+        <main className="content-wrapper">Página Galería de ilustración</main>
     )
 }
 

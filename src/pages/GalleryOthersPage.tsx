@@ -1,6 +1,6 @@
 const GalleryOthersPage = () => {
     return(
-        <div>Página Galería otros</div>
+        <main className="content-wrapper">Página Galería otros</main>
     )
 }
 

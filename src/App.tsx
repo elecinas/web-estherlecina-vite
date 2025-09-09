@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HomePage, AboutPage, BlogPage, ContactPage, GalleryDesignUxUiPage, GalleryDevelopmentPage, GalleryGraphicDesignPage, GalleryIllustrationPage, GalleryOthersPage, GalleryPage, NotFoundPage404 } from './pages';
 import Header from './components/Header'
-import reactLogo from './assets/react.svg'
+// import reactLogo from './assets/react.svg'
 import './App.css'
 import GalleryItemPage from './pages/GalleryItemPage';
 import ScrollToTop from './components/ScrollToTop';
@@ -15,7 +15,7 @@ function App() {
     <LanguageProvider>
       <Router>
         <Header  />
-        <img src={reactLogo} className="logo react" alt="React logo" />
+        {/* <img src={reactLogo} className="logo react" alt="React logo" /> */}
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
