@@ -1,7 +1,7 @@
 header {
     position: sticky;
     background-color: var(--primary-color);
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .nav-menu-container {
