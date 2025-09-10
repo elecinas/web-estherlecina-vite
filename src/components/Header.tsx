@@ -48,7 +48,8 @@ const Header = () => {
         </div>
         <nav className={`nav-menu-list ${isMenuOpen ? "menu-visible" : ""}`}>
           <div className="nav-menu-list-content">
-            <button
+            <div className="nav-menu-list-top-items">
+              <button
               className="navbar-toggler"
               type="button"
               onClick={toggleMenu}
@@ -63,6 +64,15 @@ const Header = () => {
                 </svg>
               </span>
             </button>
+            <select
+              className="language-selector"
+              value={language}
+              onChange={(e) => languageSelector(e)}
+            >
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+            </select>
+            </div>
             <ul className="menu-list" onClick={toggleMenu}>
               <li>
                 <AboutIcon className="menu-list-icon" width={16} height={16} />
@@ -152,14 +162,6 @@ const Header = () => {
                 </NavLink>
               </li>
             </ul>
-            <select
-              className="language-selector"
-              value={language}
-              onChange={(e) => languageSelector(e)}
-            >
-              <option value="en">EN</option>
-              <option value="es">ES</option>
-            </select>
           </div>
         </nav>
       </div>

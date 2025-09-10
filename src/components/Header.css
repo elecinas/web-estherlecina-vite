@@ -66,9 +66,10 @@ header {
   padding: 0;
 }
 
-.navbar-toggler {
-  flex-grow: 0;
-  align-self: flex-end;
+.nav-menu-list-top-items {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
 }
 
 .menu-list {
@@ -147,7 +148,9 @@ header {
 }
 
 .menu-list-father-wrapper:hover::after,
-.menu-list-nested>li:last-child:hover::after {
+.menu-list-father-wrapper:focus-within::after,
+.menu-list-nested>li:last-child:hover::after,
+.menu-list-nested>li:last-child:focus-within::after {
     background-color: var(--accent-color);
     cursor: pointer;
 }
@@ -165,7 +168,7 @@ header {
 }
 
 .menu-list > li:not(:nth-child(2)):hover,
-.menu-list-nested > li:hover {
+.menu-list-nested > li:not(:last-child):hover {
   background-color: var(--accent-color);
   cursor: pointer;
 }
@@ -176,6 +179,82 @@ header {
 
 .menu-visible {
   top: 0;
+}
+
+/*Focus en los vínculos*/
+/* 🔹 Estilo para a (links) al recibir focus con tabulador */
+.menu-list > li:not(:nth-child(2)) a:focus,
+.menu-list-father-wrapper > a:focus,
+.menu-list-nested > li a:focus {
+  outline: none; /* quita borde azul por defecto */
+  color: var(--primary-color);
+}
+
+/* 🔹 Aplica también al icono dentro del li cuando el link tiene foco */
+.menu-list > li:not(:nth-child(2)) a:focus + .menu-list-icon,
+.menu-list-father-wrapper > a:focus + .menu-list-icon,
+.menu-list-nested > li a:focus + .menu-list-icon {
+  fill: var(--primary-color);
+}
+
+/* 🔹 Fondo del li cuando su a está enfocado */
+.menu-list > li:not(:nth-child(2)):has(a:focus),
+.menu-list-nested > li:not(:last-child):has(a:focus) {
+  background-color: var(--accent-color);
+}
+
+/* al estar enfocado con tab */
+.language-selector:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  border: 3px solid var(--accent-color);
+}
+
+/* Opciones internas */
+.language-selector option {
+  background-color: #fff;
+  color: var(--primary-color);
+}
+
+/* Flecha custom */
+.language-selector {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 16px;
+}
+
+
+/* Estilos select */
+
+.language-selector {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 6em;
+
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.language-selector option {
+  max-width: 50%; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.language-selector:hover {
+  background-color: var(--accent-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 @media (min-width: 1140px) {
