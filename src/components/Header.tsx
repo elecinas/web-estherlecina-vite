@@ -1,10 +1,18 @@
+import ElsImago from "../assets/ELS_imago.svg?react";
+import AboutIcon from "../assets/about.svg?react";
+import GalleryIcon from "../assets/briefcase.svg?react";
+import GraphicDesignIcon from "../assets/ruler-combined.svg?react";
+import IllustrationIcon from "../assets/pencil.svg?react";
+import UxuiIcon from "../assets/share-nodes.svg?react";
+import CodeIcon from "../assets/code.svg?react";
+import OthersIcon from "../assets/hand-sparkles.svg?react";
+import ContactIcon from "../assets/phone.svg?react";
+import BlogIcon from "../assets/message.svg?react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import "./Header.css";
 import { useLanguage } from "../context/languageContext";
 import { headerContent } from "../data/global";
-import elsImago from "../assets/ELS_imago.svg";
-// import reactLogo from '../assets/react.svg'
 
 const Header = () => {
   const { language, setLanguage } = useLanguage();
@@ -22,12 +30,7 @@ const Header = () => {
         <div className="nav-menu-container">
           <NavLink to="/">
             <div className="logo">
-              <img
-                src={elsImago}
-                width={40}
-                height={40}
-                alt="imagotipo de ELW"
-              />
+              <ElsImago width={40} height={40} />
               <p className="els">
                 EL<span className="colored-w">W</span>
               </p>
@@ -62,15 +65,28 @@ const Header = () => {
             </button>
             <ul className="menu-list" onClick={toggleMenu}>
               <li>
-                {/* <img src={reactLogo} alt="" /> */}
+                <AboutIcon className="menu-list-icon" width={16} height={16} />
                 <NavLink to="/about">
                   {headerContent.translations[language].navBar.about}
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/portfolio">Galería</NavLink>
+              <li className="menu-list-father">
+                <div className="menu-list-father-wrapper">
+                  <GalleryIcon
+                    className="menu-list-icon"
+                    width={16}
+                    height={16}
+                  />
+                  <NavLink to="/portfolio">{headerContent.translations[language].navBar.portfolio}</NavLink>
+                </div>
+
                 <ul className="menu-list-nested">
                   <li>
+                    <GraphicDesignIcon
+                      className="menu-list-icon"
+                      width={16}
+                      height={16}
+                    />
                     <NavLink to="/graphic-design">
                       {
                         headerContent.translations[language].navBar
@@ -79,6 +95,11 @@ const Header = () => {
                     </NavLink>
                   </li>
                   <li>
+                    <IllustrationIcon
+                      className="menu-list-icon"
+                      width={16}
+                      height={16}
+                    />
                     <NavLink to="/illustration">
                       {
                         headerContent.translations[language].navBar
@@ -87,16 +108,31 @@ const Header = () => {
                     </NavLink>
                   </li>
                   <li>
+                    <UxuiIcon
+                      className="menu-list-icon"
+                      width={16}
+                      height={16}
+                    />
                     <NavLink to="/ux-ui-design">
                       {headerContent.translations[language].navBar.designUxUi}
                     </NavLink>
                   </li>
                   <li>
+                    <CodeIcon
+                      className="menu-list-icon"
+                      width={16}
+                      height={16}
+                    />
                     <NavLink to="/development">
                       {headerContent.translations[language].navBar.development}
                     </NavLink>
                   </li>
                   <li>
+                    <OthersIcon
+                      className="menu-list-icon"
+                      width={16}
+                      height={16}
+                    />
                     <NavLink to="/others">
                       {headerContent.translations[language].navBar.others}
                     </NavLink>
@@ -104,11 +140,13 @@ const Header = () => {
                 </ul>
               </li>
               <li>
+                <ContactIcon className="menu-list-icon" width={16} height={16} />
                 <NavLink to="/contact">
                   {headerContent.translations[language].navBar.contact}
                 </NavLink>
               </li>
               <li>
+                <BlogIcon className="menu-list-icon" width={16} height={16} />
                 <NavLink to="/blog">
                   {headerContent.translations[language].navBar.blog}
                 </NavLink>

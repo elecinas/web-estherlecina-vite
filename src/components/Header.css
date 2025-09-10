@@ -47,7 +47,6 @@ header {
 .nav-menu-list {
   background-color: var(--secondary-color);
   z-index: 100;
-
   position: absolute;
   top: -100vh;
   right: 0;
@@ -83,19 +82,22 @@ header {
   position: relative;
   display: block;
   padding: 1rem;
-  padding-left: 2.5em;
+  padding-left: 1.5em;
   border-bottom: 1px solid #fff;
+  transition: background-color 0.3s ease;
 }
 
-/* .menu-list li::before {
-  content: url("images/react.svg");
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  color: var(--accent-color);
-  font-size: .5rem;
-  line-height: 1.2;
-} */
+.menu-list-nested li {
+    padding-left: 2.5rem;
+}
+
+.menu-list > li:not(:nth-child(2)),
+.menu-list-father-wrapper,
+.menu-list-nested > li {
+  display: flex;
+  align-items: center;
+  gap: .3em;
+}
 
 .menu-list > li:first-child {
   border-top: 1px solid #fff;
@@ -111,10 +113,6 @@ header {
   border-bottom: 0;
 }
 
-/* .menu-list-nested>li {
-    margin-left: 1rem;
-} */
-
 .menu-list a {
   display: block;
   width: 100%;
@@ -122,14 +120,54 @@ header {
   font-family: "Quicksand", Avenir, Helvetica, Arial, sans-serif;
   font-size: var(--mobile-margin);
   font-weight: bold;
+  transition: color 0.3 ease;
 }
 
-.menu-list a:hover {
+.menu-list-icon {
+  fill: #fff;
+}
+
+.menu-list-father {
+    position: relative;
+    background-color: transparent;
+}
+
+.menu-list-father-wrapper::after,
+.menu-list-nested>li:last-child::after {
+    content: ".";
+    width: calc(100% - 32px);
+    background-color: transparent;
+    color: transparent;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    padding: var(--mobile-margin);
+    transition: background-color 0.3s ease;
+}
+
+.menu-list-father-wrapper:hover::after,
+.menu-list-nested>li:last-child:hover::after {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.menu-list > li:not(:nth-child(2)):hover a,
+.menu-list-father-wrapper:hover>a,
+.menu-list-nested > li:hover a {
   color: var(--primary-color);
 }
 
-.menu-list > li:not(:nth-child(2)):hover {
+.menu-list > li:not(:nth-child(2)):hover .menu-list-icon,
+.menu-list-father-wrapper:hover>.menu-list-icon,
+.menu-list-nested > li:hover .menu-list-icon {
+  fill: var(--primary-color);
+}
+
+.menu-list > li:not(:nth-child(2)):hover,
+.menu-list-nested > li:hover {
   background-color: var(--accent-color);
+  cursor: pointer;
 }
 
 .language-selector {
