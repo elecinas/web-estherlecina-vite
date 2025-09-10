@@ -4,6 +4,7 @@ import "./Header.css";
 import { useLanguage } from "../context/languageContext";
 import { headerContent } from "../data/global";
 import elsImago from "../assets/ELS_imago.svg";
+// import reactLogo from '../assets/react.svg'
 
 const Header = () => {
   const { language, setLanguage } = useLanguage();
@@ -43,75 +44,85 @@ const Header = () => {
           </button>
         </div>
         <nav className={`nav-menu-list ${isMenuOpen ? "menu-visible" : ""}`}>
-          <button className="navbar-toggler" type="button" onClick={toggleMenu}>
-            <span className="navbar-toggler-icon">
-              <svg
-                role="button"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 384 512"
-              >
-                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
-            </span>
-          </button>
-          <ul className="menu-list" onClick={toggleMenu}>
-            <li>
-              <NavLink to="/about">
-                {headerContent.translations[language].navBar.about}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/portfolio">Galería</NavLink>
-              <ul>
-                <li>
-                  <NavLink to="/graphic-design">
-                    {headerContent.translations[language].navBar.graphicDesign}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/illustration">
-                    {
-                      headerContent.translations[language].navBar
-                        .illustrationAndComic
-                    }
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/ux-ui-design">
-                    {headerContent.translations[language].navBar.designUxUi}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/development">
-                    {headerContent.translations[language].navBar.development}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/others">
-                    {headerContent.translations[language].navBar.others}
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <NavLink to="/contact">
-                {headerContent.translations[language].navBar.contact}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/blog">
-                {headerContent.translations[language].navBar.blog}
-              </NavLink>
-            </li>
-          </ul>
-          <select
-            className="language-selector"
-            value={language}
-            onChange={(e) => languageSelector(e)}
-          >
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
+          <div className="nav-menu-list-content">
+            <button
+              className="navbar-toggler"
+              type="button"
+              onClick={toggleMenu}
+            >
+              <span className="navbar-toggler-icon">
+                <svg
+                  role="button"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                >
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                </svg>
+              </span>
+            </button>
+            <ul className="menu-list" onClick={toggleMenu}>
+              <li>
+                {/* <img src={reactLogo} alt="" /> */}
+                <NavLink to="/about">
+                  {headerContent.translations[language].navBar.about}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/portfolio">Galería</NavLink>
+                <ul className="menu-list-nested">
+                  <li>
+                    <NavLink to="/graphic-design">
+                      {
+                        headerContent.translations[language].navBar
+                          .graphicDesign
+                      }
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/illustration">
+                      {
+                        headerContent.translations[language].navBar
+                          .illustrationAndComic
+                      }
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/ux-ui-design">
+                      {headerContent.translations[language].navBar.designUxUi}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/development">
+                      {headerContent.translations[language].navBar.development}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/others">
+                      {headerContent.translations[language].navBar.others}
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <NavLink to="/contact">
+                  {headerContent.translations[language].navBar.contact}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/blog">
+                  {headerContent.translations[language].navBar.blog}
+                </NavLink>
+              </li>
+            </ul>
+            <select
+              className="language-selector"
+              value={language}
+              onChange={(e) => languageSelector(e)}
+            >
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+            </select>
+          </div>
         </nav>
       </div>
     </header>
