@@ -30,7 +30,12 @@ header {
   color: var(--accent-color);
 }
 
+.nav-menu-container a:focus {
+  outline: 3px solid var(--secondary-color);
+}
+
 .navbar-toggler {
+  cursor: pointer;
   background-color: transparent;
   border: 0;
   width: 40px;
@@ -42,6 +47,20 @@ header {
   fill: #fff;
   width: 40px;
   height: 40px;
+  transition: fill 0.3s ease;
+}
+
+.navbar-toggler:hover svg {
+    fill: var(--accent-color)
+}
+
+.navbar-toggler:focus {
+  outline: 3px solid var(--secondary-color);
+
+}
+
+.navbar-toggler:focus svg {
+  fill: var(--accent-color);
 }
 
 .nav-menu-list {
@@ -258,6 +277,10 @@ header {
 }
 
 @media (min-width: 1140px) {
+    .nav-menu-list {
+        height: auto;
+        padding-bottom: 20px;
+    }
   .nav-menu-list-content {
     width: 100%;
     max-width: 1140px;
