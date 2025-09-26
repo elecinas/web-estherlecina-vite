@@ -54,53 +54,6 @@ p {
     color: var(--secondary-color);
 }
 
-.section-separator {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-}
-
-.section-separator svg {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%) scale(1);
-    transform-origin: center;
-    transform-box: fill-box;
-    transition: transform 0.5s ease-in-out, fill 0.5s ease-in-out;
-}
-
-.section-separator svg:hover {
-    cursor: pointer;
-    transform: translateX(-50%) scale(1.1);
-}
-
-.section-separator::before {
-    content: "";
-    position: absolute;
-    top: calc(50% - 2.5px);
-    left: 0;
-    border-top: 2px solid var(--primary-color);
-    width: 100%;
-    height: 50%;
-    background-color: var(--background-color);
-}
-
-.chev,
-.chev-nav-page {
-    transition:
-        fill 1s ease-in-out,
-        transform 1s ease-in-out;
-}
-
-.chev-nav-page:hover {
-    cursor: pointer;
-}
-
-.chev-nav-page:hover .chev {
-    fill: var(--secondary-color);
-}
-
 @media (min-width: 600px) {
     .home-intro {
         height: auto;

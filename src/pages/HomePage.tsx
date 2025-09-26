@@ -1,10 +1,10 @@
 import ElSCube from "../assets/ELS_cube.svg?react";
-import ChevSection from "../assets/chev_section.svg?react";
 import "./HomePage.css";
 import { homePage } from "../data/home";
 import { useLanguage } from "../context/languageContext";
 import { richText } from "../helpers/processingText";
 import ButtonLink from "../components/ButtonLink";
+import SectionSeparator from "../components/SectionSeparator";
 
 const HomePage = () => {
   const { language } = useLanguage();
@@ -24,9 +24,7 @@ const HomePage = () => {
           href={homePage.translations[language].cta.href}
         />
       </section>
-      <div className="section-separator">
-        <ChevSection className="chev-nav-page" role="button" width={"54.3"} />
-      </div>
+      <SectionSeparator />
     </main>
   );
 };
