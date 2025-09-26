@@ -2,10 +2,16 @@
   margin: 0 var(--mobile-margin);
 }
 
+@media (min-width: 800px){
+  .content-wrapper {
+    margin: 0 4rem;
+  }
+}
+
 @media (min-width: 1140px) {
     .content-wrapper {
         width: 100%;
-        max-width: 1140px;
+        max-width: 1108px; /*var(1140px - 2rem)*/
         margin: 0 auto;
     }
 }

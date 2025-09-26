@@ -1,5 +1,5 @@
 import React from "react";
-import type { EmbedProps } from "../data/galleries";
+import type { EmbedProps } from "../types/galleries";
 
 const Embed: React.FC<EmbedProps> = ({ type, src, title = "Embed" }) => {
   switch (type) {

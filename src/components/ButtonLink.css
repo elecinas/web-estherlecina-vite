@@ -1,0 +1,23 @@
+.button-link {
+    display: block;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    color: #fff;
+    font-family: "Quicksand", Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.button-link:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.button-link:focus {
+    background-color: var(--secondary-color);
+    outline: 3px solid var(--primary-color);
+    color: var(--primary-color);
+}
